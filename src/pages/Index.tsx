@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SearchBar } from "@/components/SearchBar";
 import { SearchResult } from "@/components/SearchResult";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
@@ -53,7 +54,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-background to-search-subtle">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <header className="py-6">
+        <header className="py-6 flex items-center justify-between">
           <h1 className="text-2xl font-bold text-primary cursor-pointer" onClick={() => {
             setSearchQuery("");
             setResults([]);
@@ -61,6 +62,7 @@ const Index = () => {
           }}>
             CleanSearch
           </h1>
+          <ThemeToggle />
         </header>
 
         {/* Search Section */}
